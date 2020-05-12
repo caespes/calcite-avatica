@@ -84,7 +84,7 @@ tasks {
 
     shadowJar {
         manifest {
-            attributes["Main-Class"] = "org.apache.calcite.avatica.server.StandaloneServer"
+            attributes["Main-Class"] = "org.apache.calcite.avatica.standalone.StandaloneServer"
         }
         archiveClassifier.set("shadow")
         configurations = listOf(shaded)
