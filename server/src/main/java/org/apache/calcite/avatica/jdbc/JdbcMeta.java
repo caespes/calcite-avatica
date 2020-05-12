@@ -622,6 +622,7 @@ public class JdbcMeta implements ProtobufMeta {
     }
     // Avoid global synchronization of connection opening
     try {
+      String url = fullInfo.getProperty("avaticaPassthroughUrl", this.url);
       Connection conn = createConnection(url, fullInfo);
       Connection loadedConn = cacheAsMap.putIfAbsent(ch.id, conn);
       // Race condition: someone beat us to storing the connection in the cache.
